@@ -6,9 +6,9 @@ require('dotenv').config({
 
 module.exports = {
   siteMetadata: {
-    title: `Gatsby Shopify Starter`,
-    description: `Kick off your next, ecommerce experience with this Gatsby starter. This starter ships with credentials to a shopify demo store so you can try it out immediately.`,
-    author: `@alexanderhorl`,
+    title: `Stephan's Quick Start`,
+    description: `Start my next Gatsby project quickly with this starter`,
+    author: `@stevegriesel`,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -28,26 +28,18 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#999`,
+        theme_color: `#999`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/gatsby-icon.png`,
       },
     },
     {
       resolve: `gatsby-source-shopify`,
       options: {
-        // The domain name of your Shopify shop. This is required.
-        // Example: 'gatsby-source-shopify-test-shop' if your Shopify address is
-        // 'gatsby-source-shopify-test-shop.myshopify.com'.
+        // use only the shop name {myshop}.myshopify.com
         shopName: process.env.SHOP_NAME,
-
-        // An API access token to your Shopify shop. This is required.
-        // You can generate an access token in the "Manage private apps" section
-        // of your shop's Apps settings. In the Storefront API section, be sure
-        // to select "Allow this app to access your storefront data using the
-        // Storefront API".
-        // See: https://help.shopify.com/api/custom-storefronts/storefront-api/getting-started#authentication
+        // copy the storefront access token once you have ticked 'Allow this app to access your storefront data using the Storefront API', not the Admin API on the top of the page
         accessToken: process.env.SHOPIFY_ACCESS_TOKEN,
 
         // Set verbose to true to display a verbose output on `npm run develop`
@@ -71,8 +63,5 @@ module.exports = {
         respectDNT: true,
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.app/offline
-    // 'gatsby-plugin-offline',
   ],
 }
